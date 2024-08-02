@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Stethoscope - VIAM</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/f0601b0fb2.js" crossorigin="anonymous"></script>
+    <script type='module' src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js'></script>
+    <script nomodule='' src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js'></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.2.8/mqtt.min.js"></script>
+
+</head>
+
+<body translate="no">
+    <div class="container">
+        <div class="components" id="analyse">
+            <div class="image">
+                <img src="assets/img/ai.svg" class="svg" id="ai">
+            </div>
+
+            <div class="det" id="det">
+                <p></p>
+            </div>
+            
+            <div class="lottie">
+                <dotlottie-player id="start_analysis" src="https://lottie.host/3f2204df-5648-43d3-8a51-d3df74eacb5a/MGJ6NKYgRa.json" background="transparent" speed="1" loop></dotlottie-player>
+            </div>
+
+            <div class="btn btn__primary" id="analyse_button" onclick="sendCommand('analyse')">
+                <p>Analyse</p>
+            </div>
+        </div>
+
+
+        <div class="components" id="stream">
+            <div class="image">
+                <img src="assets/img/steth.svg" class="svg" id="steth">
+            </div>
+
+            <div class="lottie">
+                <dotlottie-player id="start_stream" src="https://lottie.host/b278267c-50a8-4805-8135-d5c0904990c4/37OiqX2vur.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+            </div>    
+
+            <div class="btn btn__primary" id="stream_button" onclick="sendCommand('stream')">
+                <p>Stream</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audioPlayer" onclick="playAudio()"></audio>
+
+    <script id="rendered-js" src="assets/js/script.js">
+    </script>
+
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+
+</body>
+
+</html>
